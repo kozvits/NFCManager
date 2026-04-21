@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "com.nfcmanager.app-debug-61:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/mipmap-mdpi_ic_launcher_round.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/mipmap-mdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/mipmap-xxhdpi_ic_launcher_round.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/mipmap-xxhdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/mipmap-hdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/mipmap-xxxhdpi_ic_launcher.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/mipmap-xxxhdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/mipmap-mdpi_ic_launcher.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/mipmap-mdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/mipmap-xxxhdpi_ic_launcher_round.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/mipmap-xxxhdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/mipmap-hdpi_ic_launcher_round.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/mipmap-hdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/mipmap-xhdpi_ic_launcher.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/mipmap-xhdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/xml_hce_service.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/xml/hce_service.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/mipmap-xhdpi_ic_launcher_round.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/mipmap-xhdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/mipmap-xxhdpi_ic_launcher.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/mipmap-xxhdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.nfcmanager.app-debug-61:/xml_nfc_tech_filter.xml.flat",
+        "source": "com.nfcmanager.app-main-63:/xml/nfc_tech_filter.xml"
+    }
+]

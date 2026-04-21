@@ -1,0 +1,212 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.nfcmanager"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.NFC" />
+11-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:4:5-62
+11-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:4:22-59
+12
+13    <uses-feature
+13-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:5:5-7:35
+14        android:name="android.hardware.nfc"
+14-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:6:9-44
+15        android:required="true" />
+15-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:7:9-32
+16    <uses-feature
+16-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:8:5-10:35
+17        android:name="android.hardware.nfc.hce"
+17-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:9:9-48
+18        android:required="true" />
+18-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:10:9-32
+19
+20    <permission
+20-->[androidx.core:core:1.13.1] C:\Users\Admin\.gradle\caches\8.9\transforms\bf7e05677cee5cf75afcad96a96c0614\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+21        android:name="com.nfcmanager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+21-->[androidx.core:core:1.13.1] C:\Users\Admin\.gradle\caches\8.9\transforms\bf7e05677cee5cf75afcad96a96c0614\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+22        android:protectionLevel="signature" />
+22-->[androidx.core:core:1.13.1] C:\Users\Admin\.gradle\caches\8.9\transforms\bf7e05677cee5cf75afcad96a96c0614\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+23
+24    <uses-permission android:name="com.nfcmanager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+24-->[androidx.core:core:1.13.1] C:\Users\Admin\.gradle\caches\8.9\transforms\bf7e05677cee5cf75afcad96a96c0614\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+24-->[androidx.core:core:1.13.1] C:\Users\Admin\.gradle\caches\8.9\transforms\bf7e05677cee5cf75afcad96a96c0614\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+25
+26    <application
+26-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:12:5-53:19
+27        android:name="com.nfcmanager.NFCManagerApp"
+27-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:13:9-38
+28        android:allowBackup="true"
+28-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:14:9-35
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.13.1] C:\Users\Admin\.gradle\caches\8.9\transforms\bf7e05677cee5cf75afcad96a96c0614\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+30        android:debuggable="true"
+31        android:extractNativeLibs="false"
+32        android:icon="@mipmap/ic_launcher"
+32-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:15:9-43
+33        android:label="@string/app_name"
+33-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:16:9-41
+34        android:roundIcon="@mipmap/ic_launcher_round"
+34-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:17:9-54
+35        android:supportsRtl="true"
+35-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:18:9-35
+36        android:theme="@style/Theme.NFCManager" >
+36-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:19:9-48
+37        <activity
+37-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:21:9-38:20
+38            android:name="com.nfcmanager.presentation.MainActivity"
+38-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:22:13-54
+39            android:exported="true"
+39-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:23:13-36
+40            android:launchMode="singleTop" >
+40-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:24:13-43
+41            <intent-filter>
+41-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:25:13-28:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:26:17-69
+42-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:26:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:27:17-77
+44-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:27:27-74
+45            </intent-filter>
+46            <intent-filter>
+46-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:29:13-34:29
+47                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+47-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:30:17-77
+47-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:30:25-74
+48                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+48-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:31:17-76
+48-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:31:25-73
+49                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+49-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:32:17-77
+49-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:32:25-74
+50
+51                <category android:name="android.intent.category.DEFAULT" />
+51-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:33:17-76
+51-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:33:27-73
+52            </intent-filter>
+53
+54            <meta-data
+54-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:35:13-37:59
+55                android:name="android.nfc.action.TECH_DISCOVERED"
+55-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:36:17-66
+56                android:resource="@xml/nfc_tech_filter" />
+56-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:37:17-56
+57        </activity>
+58
+59        <service
+59-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:40:9-51:19
+60            android:name="com.nfcmanager.presentation.emulation.NFCHCEService"
+60-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:41:13-65
+61            android:exported="true"
+61-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:42:13-36
+62            android:permission="android.permission.BIND_NFC_SERVICE" >
+62-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:43:13-69
+63            <intent-filter>
+63-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:44:13-47:29
+64                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+64-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:45:17-93
+64-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:45:25-90
+65
+66                <category android:name="android.intent.category.DEFAULT" />
+66-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:33:17-76
+66-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:33:27-73
+67            </intent-filter>
+68
+69            <meta-data
+69-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:48:13-50:55
+70                android:name="android.nfc.cardemulation.host_apdu_service"
+70-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:49:17-75
+71                android:resource="@xml/hce_service" />
+71-->C:\Users\Admin\Documents\GitHub\NFCManager\app\src\main\AndroidManifest.xml:50:17-52
+72        </service>
+73
+74        <provider
+74-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\8.9\transforms\a6f27580f462acf17b8291e59a3bcb4f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+75            android:name="androidx.startup.InitializationProvider"
+75-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\8.9\transforms\a6f27580f462acf17b8291e59a3bcb4f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:25:13-67
+76            android:authorities="com.nfcmanager.androidx-startup"
+76-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\8.9\transforms\a6f27580f462acf17b8291e59a3bcb4f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:26:13-68
+77            android:exported="false" >
+77-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\8.9\transforms\a6f27580f462acf17b8291e59a3bcb4f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:27:13-37
+78            <meta-data
+78-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\8.9\transforms\a6f27580f462acf17b8291e59a3bcb4f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+79                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+79-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\8.9\transforms\a6f27580f462acf17b8291e59a3bcb4f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:30:17-75
+80                android:value="androidx.startup" />
+80-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\8.9\transforms\a6f27580f462acf17b8291e59a3bcb4f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:31:17-49
+81            <meta-data
+81-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\Admin\.gradle\caches\8.9\transforms\68a07a8970ad47f6f30e2aecdfe8e764\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:29:13-31:52
+82                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+82-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\Admin\.gradle\caches\8.9\transforms\68a07a8970ad47f6f30e2aecdfe8e764\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:30:17-78
+83                android:value="androidx.startup" />
+83-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\Admin\.gradle\caches\8.9\transforms\68a07a8970ad47f6f30e2aecdfe8e764\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:31:17-49
+84            <meta-data
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+85                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+86                android:value="androidx.startup" />
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+87        </provider>
+88
+89        <activity
+89-->[androidx.compose.ui:ui-tooling-android:1.7.3] C:\Users\Admin\.gradle\caches\8.9\transforms\0866a121e8bf9926d2baa48bc39ddd4e\transformed\jetified-ui-tooling-release\AndroidManifest.xml:23:9-25:39
+90            android:name="androidx.compose.ui.tooling.PreviewActivity"
+90-->[androidx.compose.ui:ui-tooling-android:1.7.3] C:\Users\Admin\.gradle\caches\8.9\transforms\0866a121e8bf9926d2baa48bc39ddd4e\transformed\jetified-ui-tooling-release\AndroidManifest.xml:24:13-71
+91            android:exported="true" />
+91-->[androidx.compose.ui:ui-tooling-android:1.7.3] C:\Users\Admin\.gradle\caches\8.9\transforms\0866a121e8bf9926d2baa48bc39ddd4e\transformed\jetified-ui-tooling-release\AndroidManifest.xml:25:13-36
+92
+93        <service
+93-->[androidx.room:room-runtime:2.6.1] C:\Users\Admin\.gradle\caches\8.9\transforms\769d06fb1e6f8216ecae7d70eb60ea27\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+94            android:name="androidx.room.MultiInstanceInvalidationService"
+94-->[androidx.room:room-runtime:2.6.1] C:\Users\Admin\.gradle\caches\8.9\transforms\769d06fb1e6f8216ecae7d70eb60ea27\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+95            android:directBootAware="true"
+95-->[androidx.room:room-runtime:2.6.1] C:\Users\Admin\.gradle\caches\8.9\transforms\769d06fb1e6f8216ecae7d70eb60ea27\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+96            android:exported="false" />
+96-->[androidx.room:room-runtime:2.6.1] C:\Users\Admin\.gradle\caches\8.9\transforms\769d06fb1e6f8216ecae7d70eb60ea27\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+97
+98        <receiver
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+99            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+99-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+100            android:directBootAware="false"
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+101            android:enabled="true"
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+102            android:exported="true"
+102-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+103            android:permission="android.permission.DUMP" >
+103-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+104            <intent-filter>
+104-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+105                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+105-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+105-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+106            </intent-filter>
+107            <intent-filter>
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+108                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+109            </intent-filter>
+110            <intent-filter>
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+111                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+112            </intent-filter>
+113            <intent-filter>
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+114                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\8.9\transforms\250941d667576fd1b3c2f02d188f8b62\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+115            </intent-filter>
+116        </receiver>
+117    </application>
+118
+119</manifest>

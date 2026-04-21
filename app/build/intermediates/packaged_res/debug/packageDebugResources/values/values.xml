@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NFC Manager</string>
+    <string name="hce_aid_group_description">NFC Card Emulation</string>
+    <string name="hce_service_description">NFC Card Emulation Service</string>
+    <style name="Theme.NFCManager" parent="android:Theme.Material.Light.NoActionBar"/>
+</resources>
