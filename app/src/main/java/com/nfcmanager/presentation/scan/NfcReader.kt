@@ -3,9 +3,9 @@ package com.nfcmanager.presentation.scan
 import android.nfc.Tag
 import android.nfc.tech.MifareClassic
 import android.nfc.tech.MifareUltralight
-import android.nfc.tech.NfcA
 import com.nfcmanager.domain.model.CardType
 import com.nfcmanager.domain.model.NfcCard
+import com.nfcmanager.presentation.emulation.toHex
 import java.io.IOException
 
 object NfcReader {
@@ -45,8 +45,7 @@ object NfcReader {
                     val blockCount = mfc.getBlockCountInSector(sector)
                     for (b in firstBlock until firstBlock + blockCount) {
                         try {
-                            val data = mfc.readBlock(b)
-                            blocks.add(data.toHex())
+                            blocks.add(mfc.readBlock(b).toHex())
                         } catch (e: IOException) {
                             blocks.add("????????????????????????????????")
                         }
@@ -79,7 +78,6 @@ object NfcReader {
             for (page in 0 until pageCount step 4) {
                 try {
                     val data = mul.readPages(page)
-                    // readPages returns 4 pages (16 bytes)
                     for (i in 0 until 4) {
                         if (page + i < pageCount) {
                             pages.add(data.copyOfRange(i * 4, i * 4 + 4).toHex())
@@ -112,16 +110,4 @@ object NfcReader {
             techList = techList
         )
     }
-}
-
-fun ByteArray.toHex(): String = joinToString("") { "%02X".format(it) }
-
-fun String.hexToBytes(): ByteArray {
-    val len = length
-    val result = ByteArray(len / 2)
-    for (i in 0 until len / 2) {
-        result[i] = ((Character.digit(this[i * 2], 16) shl 4) +
-                Character.digit(this[i * 2 + 1], 16)).toByte()
-    }
-    return result
 }
