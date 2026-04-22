@@ -1,12 +1,14 @@
 package com.nfcmanager.presentation.cards
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nfcmanager.domain.model.NfcCard
 import com.nfcmanager.domain.usecase.*
 import com.nfcmanager.presentation.emulation.NFCHCEService
-import com.nfcmanager.presentation.scan.hexToBytes
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -24,8 +26,12 @@ class CardsViewModel @Inject constructor(
     private val deleteCard: DeleteCardUseCase,
     private val setSelectedCard: SetSelectedCardUseCase,
     private val getSelectedCard: GetSelectedCardUseCase,
-    private val clearSelectedCard: ClearSelectedCardUseCase
+    private val clearSelectedCard: ClearSelectedCardUseCase,
+    @ApplicationContext private val context: Context
 ) : ViewModel() {
+
+    private val prefs: SharedPreferences =
+        context.getSharedPreferences(NFCHCEService.PREFS_NAME, Context.MODE_PRIVATE)
 
     private val _uiState = MutableStateFlow(CardsUiState())
     val uiState: StateFlow<CardsUiState> = _uiState.asStateFlow()
@@ -84,8 +90,8 @@ class CardsViewModel @Inject constructor(
 
     private fun activateEmulation(card: NfcCard) {
         try {
-            NFCHCEService.emulatedUidBytes = card.uid.hexToBytes()
-            NFCHCEService.isEmulating = true
+            // Сохраняем в SharedPreferences — переживает перезапуск сервиса
+            NFCHCEService.setEmulationData(prefs, card.uid, active = true)
             _uiState.update { it.copy(isEmulating = true) }
         } catch (e: Exception) {
             showSnackbar("Ошибка активации эмуляции")
@@ -93,8 +99,7 @@ class CardsViewModel @Inject constructor(
     }
 
     private fun stopEmulation() {
-        NFCHCEService.emulatedUidBytes = null
-        NFCHCEService.isEmulating = false
+        NFCHCEService.setEmulationData(prefs, "", active = false)
         _uiState.update { it.copy(isEmulating = false) }
     }
 
