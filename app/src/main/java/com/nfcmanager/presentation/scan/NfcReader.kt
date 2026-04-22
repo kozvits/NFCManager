@@ -11,17 +11,30 @@ import java.io.IOException
 object NfcReader {
 
     fun readTag(tag: Tag): NfcCard? {
-        val uid = tag.id.toHex()
+        // tag.id возвращает UID в порядке как карта передаёт по RF (MSB first)
+        // Пример: карта физически = BA 85 AC 95
+        // СКУД считыватель часто показывает в обратном порядке (LSB): 95 AC 85 BA
+        // или с ведущим нулём: 00 95 AC 85 BA
+        // Сохраняем оба варианта для отображения, эмулируем в MSB (как карта)
+        val uidBytes = tag.id
+        val uidMsb = uidBytes.toHex()                          // BA85AC95  — как читает Android (и как карта передаёт)
+        val uidLsb = uidBytes.reversedArray().toHex()           // 95AC85BA  — как показывает большинство СКУД
+
         val techList = tag.techList.toList()
 
         return when {
-            techList.contains(MifareClassic::class.java.name) -> readMifareClassic(tag, uid, techList)
-            techList.contains(MifareUltralight::class.java.name) -> readMifareUltralight(tag, uid, techList)
-            else -> readGenericNfcA(tag, uid, techList)
+            techList.contains(MifareClassic::class.java.name) ->
+                readMifareClassic(tag, uidMsb, uidLsb, techList)
+            techList.contains(MifareUltralight::class.java.name) ->
+                readMifareUltralight(tag, uidMsb, uidLsb, techList)
+            else ->
+                readGenericNfcA(tag, uidMsb, uidLsb, techList)
         }
     }
 
-    private fun readMifareClassic(tag: Tag, uid: String, techList: List<String>): NfcCard? {
+    private fun readMifareClassic(
+        tag: Tag, uidMsb: String, uidLsb: String, techList: List<String>
+    ): NfcCard? {
         val mfc = MifareClassic.get(tag) ?: return null
         val sectorData = mutableMapOf<Int, List<String>>()
         val cardType = when (mfc.type) {
@@ -59,16 +72,20 @@ object NfcReader {
             try { mfc.close() } catch (_: Exception) {}
         }
 
+        val displayUid = uidMsb.chunked(2).joinToString(":")
         return NfcCard(
-            uid = uid,
-            name = "Mifare Classic (${uid.chunked(2).joinToString(":")})",
+            uid = uidMsb,     // храним MSB — именно так карта передаёт по RF
+            uidLsb = uidLsb,  // LSB для отображения как в СКУД
+            name = "Mifare Classic ($displayUid)",
             cardType = cardType,
             techList = techList,
             sectorData = sectorData
         )
     }
 
-    private fun readMifareUltralight(tag: Tag, uid: String, techList: List<String>): NfcCard? {
+    private fun readMifareUltralight(
+        tag: Tag, uidMsb: String, uidLsb: String, techList: List<String>
+    ): NfcCard? {
         val mul = MifareUltralight.get(tag) ?: return null
         val pages = mutableListOf<String>()
 
@@ -93,19 +110,25 @@ object NfcReader {
             try { mul.close() } catch (_: Exception) {}
         }
 
+        val displayUid = uidMsb.chunked(2).joinToString(":")
         return NfcCard(
-            uid = uid,
-            name = "Mifare Ultralight (${uid.chunked(2).joinToString(":")})",
+            uid = uidMsb,
+            uidLsb = uidLsb,
+            name = "Mifare Ultralight ($displayUid)",
             cardType = CardType.MIFARE_ULTRALIGHT,
             techList = techList,
             pages = pages
         )
     }
 
-    private fun readGenericNfcA(tag: Tag, uid: String, techList: List<String>): NfcCard {
+    private fun readGenericNfcA(
+        tag: Tag, uidMsb: String, uidLsb: String, techList: List<String>
+    ): NfcCard {
+        val displayUid = uidMsb.chunked(2).joinToString(":")
         return NfcCard(
-            uid = uid,
-            name = "NFC Card (${uid.chunked(2).joinToString(":")})",
+            uid = uidMsb,
+            uidLsb = uidLsb,
+            name = "NFC Card ($displayUid)",
             cardType = CardType.UNKNOWN,
             techList = techList
         )
