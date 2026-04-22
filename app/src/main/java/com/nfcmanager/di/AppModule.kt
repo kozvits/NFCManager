@@ -22,7 +22,7 @@ object AppModule {
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): NFCDatabase =
         Room.databaseBuilder(context, NFCDatabase::class.java, "nfc_manager.db")
-            .fallbackToDestructiveMigration()
+            .addMigrations(NFCDatabase.MIGRATION_1_2)
             .build()
 
     @Provides
