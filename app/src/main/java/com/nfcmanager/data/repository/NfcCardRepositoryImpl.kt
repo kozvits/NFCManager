@@ -41,9 +41,16 @@ class NfcCardRepositoryImpl @Inject constructor(
         val techListType = object : TypeToken<List<String>>() {}.type
         val sectorDataType = object : TypeToken<Map<Int, List<String>>>() {}.type
         val pagesType = object : TypeToken<List<String>>() {}.type
+
+        // uidLsb может отсутствовать в старых записях БД — восстанавливаем из uid
+        val resolvedUidLsb = uidLsb.ifBlank {
+            uid.chunked(2).reversed().joinToString("")
+        }
+
         return NfcCard(
             id = id,
             uid = uid,
+            uidLsb = resolvedUidLsb,
             name = name,
             cardType = CardType.valueOf(cardType),
             techList = gson.fromJson(techListJson, techListType),
@@ -57,6 +64,7 @@ class NfcCardRepositoryImpl @Inject constructor(
     private fun NfcCard.toEntity(): NfcCardEntity = NfcCardEntity(
         id = id,
         uid = uid,
+        uidLsb = uidLsb,
         name = name,
         cardType = cardType.name,
         techListJson = gson.toJson(techList),
